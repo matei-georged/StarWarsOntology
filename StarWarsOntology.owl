@@ -1,0 +1,1268 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#"
+     xml:base="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetStatusDT -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetStatusDT">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Destroyed</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Intact</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusCharacterDT -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusCharacterDT">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Alive</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Dead</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusFactionDT -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusFactionDT">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Active</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Inactive</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#alienBornOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#alienBornOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#fromPlanet"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedByAlien"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#controls -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#controls">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isControlledBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#fromPlanet -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#fromPlanet">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasAlien -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasAlien">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasMember"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isAlienMember"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasLeader -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasLeader">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasMember"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isLeader"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasMember">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#humanBornOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#humanBornOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#fromPlanet"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedByHuman"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedByAlien -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedByAlien">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedByDroid -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedByDroid">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedBy"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#madeOn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedByHuman -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedByHuman">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#inhabitedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isAlienMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isAlienMember">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isControlledBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isControlledBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isLeader -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isLeader">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#isMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#madeOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#madeOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#fromPlanet"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#availableToWork -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#availableToWork">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mercenary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#forceUser -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#forceUser">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasElections -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasElections">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#PoliticalFaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#headCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#headCount"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#numberOfLasers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#numberOfLasers">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#numberOfSuns -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#numberOfSuns">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#organizationHeadCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#organizationHeadCount">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#headCount"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCount">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#headCount"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCountMilds -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCountMilds">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCount"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCountMills -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCountMills">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCount"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#status -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#status"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusCharacter -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusCharacter">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#status"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusCharacterDT"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusFaction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusFaction">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#status"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusFactionDT"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusPlanet -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusPlanet">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#status"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetStatusDT"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Army -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Army">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#MilitaryFaction"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Order"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Authoritarian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Authoritarian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#PoliticalFaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#forceUser"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusCharacterDT"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#CorePlanet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#CorePlanet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCountMilds"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Darkside -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Darkside">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Order"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Democratic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Democratic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#PoliticalFaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#numberOfLasers"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#organizationHeadCount"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusFaction"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusFactionDT"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Hutts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Hutts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#InnerRimPlanet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#InnerRimPlanet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCountMills"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jawa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jawa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Lightside -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Lightside">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Order"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mercenary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mercenary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Army"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#availableToWork"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Professional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#MidRimPlanet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#MidRimPlanet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#MilitaryFaction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#MilitaryFaction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mixedside -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mixedside">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Order"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Order -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Order">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#MilitaryFaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#OuterRimPlanet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#OuterRimPlanet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetHeadCountMills"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#numberOfSuns"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusPlanet"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetStatusDT"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#PoliticalFaction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#PoliticalFaction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#hasElections"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Professional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Professional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Army"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#ReligiousFaction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#ReligiousFaction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rodians -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rodians">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Wookiees -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Wookiees">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Abednedo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Abednedo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#InnerRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</planetHeadCountMills>
+        <statusPlanet>Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Alderaan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Alderaan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#CorePlanet"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMilds rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</planetHeadCountMilds>
+        <statusPlanet>Destroyed</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Anaxes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Anaxes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#InnerRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</planetHeadCountMills>
+        <statusPlanet>Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#BB-8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#BB-8">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forceUser>
+        <numberOfLasers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfLasers>
+        <statusCharacter>Alive</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Boba_Fett -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Boba_Fett">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mercenary"/>
+        <availableToWork rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availableToWork>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Byss -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Byss">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#CorePlanet"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</numberOfSuns>
+        <planetHeadCountMilds rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</planetHeadCountMilds>
+        <statusPlanet>Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#C-3PO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#C-3PO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter"/>
+        <madeOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tatooine"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forceUser>
+        <numberOfLasers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfLasers>
+        <statusCharacter>Alive</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Cad_Bane -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Cad_Bane">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mercenary"/>
+        <availableToWork rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availableToWork>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Chandrila -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Chandrila">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#CorePlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMilds rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</planetHeadCountMilds>
+        <statusPlanet>Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Chewbacca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Chewbacca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter"/>
+        <humanBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Kashyyyk"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rebel_Alliance"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forceUser>
+        <statusCharacter>Alive</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Church_of_the_Force -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Church_of_the_Force">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#ReligiousFaction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Coruscant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Coruscant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#CorePlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMilds rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1200</planetHeadCountMilds>
+        <statusPlanet>Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DarthMaul -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DarthMaul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter"/>
+        <humanBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Dathomir"/>
+        <isLeader rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Sith"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Sith"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</forceUser>
+        <statusCharacter>Alive</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Dathomir -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Dathomir">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#OuterRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Galactic_Empire"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</planetHeadCountMills>
+        <statusPlanet>Destroyed</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#First_Order -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#First_Order">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Authoritarian"/>
+        <hasElections rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasElections>
+        <statusFaction>Active</statusFaction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Galactic_Empire -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Galactic_Empire">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Authoritarian"/>
+        <hasElections rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasElections>
+        <statusFaction>Inactive</statusFaction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Gardulla_the_Hutt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Gardulla_the_Hutt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Hutts"/>
+        <alienBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Nal_Hutta"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forceUser>
+        <statusCharacter>Alive</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Greedo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Greedo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rodians"/>
+        <alienBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rodia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Gungi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Gungi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Wookiees"/>
+        <alienBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Kashyyyk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#IG-88 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#IG-88">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forceUser>
+        <numberOfLasers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</numberOfLasers>
+        <statusCharacter>Dead</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jabba_The_Hutt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jabba_The_Hutt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Hutts"/>
+        <alienBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Nal_Hutta"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forceUser>
+        <statusCharacter>Dead</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jakku -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jakku">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#OuterRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#First_Order"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</planetHeadCountMills>
+        <statusPlanet>Destroyed</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jedi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jedi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Lightside"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jek_Nkik -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jek_Nkik">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jawa"/>
+        <alienBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tatooine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Kashyyyk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Kashyyyk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#MidRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</numberOfSuns>
+        <statusPlanet>Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Kuat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Kuat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#InnerRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</planetHeadCountMills>
+        <statusPlanet>Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#LeiaOrgana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#LeiaOrgana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter"/>
+        <humanBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Alderaan"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rebel_Alliance"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forceUser>
+        <statusCharacter>Alive</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mandalorian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mandalorian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#ReligiousFaction"/>
+        <statusFaction>Active</statusFaction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Naboo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Naboo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#MidRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</numberOfSuns>
+        <statusPlanet>Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Nal_Hutta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Nal_Hutta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#OuterRimPlanet"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</numberOfSuns>
+        <statusPlanet>Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Democratic"/>
+        <hasElections rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasElections>
+        <statusFaction>Active</statusFaction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Night_Sisters -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Night_Sisters">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#ReligiousFaction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#ObiWanKenobi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#ObiWanKenobi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jedi"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</forceUser>
+        <statusCharacter>Dead</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Oola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Oola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rodians"/>
+        <alienBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rodia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Palpatine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Palpatine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter"/>
+        <humanBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Naboo"/>
+        <isLeader rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Galactic_Empire"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Sith"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</forceUser>
+        <statusCharacter>Alive</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#R2-D2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#R2-D2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter"/>
+        <madeOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Naboo"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</forceUser>
+        <numberOfLasers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</numberOfLasers>
+        <statusCharacter>Alive</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rebel_Alliance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rebel_Alliance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Democratic"/>
+        <statusFaction>Inactive</statusFaction>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rodia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rodia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#OuterRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</numberOfSuns>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Sith -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Sith">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Darkside"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tarfful -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tarfful">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Wookiees"/>
+        <alienBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Kashyyyk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tatooine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tatooine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#OuterRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#New_Republic"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</planetHeadCountMills>
+        <statusPlanet rdf:datatype="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetStatusDT">Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#The_Whills -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#The_Whills">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#ReligiousFaction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tralus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tralus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#InnerRimPlanet"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</planetHeadCountMills>
+        <statusPlanet>Destroyed</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tteel_Kkak -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tteel_Kkak">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jawa"/>
+        <alienBornOn rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Tatooine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Vulpter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Vulpter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#OuterRimPlanet"/>
+        <isControlledBy rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Galactic_Empire"/>
+        <numberOfSuns rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</numberOfSuns>
+        <planetHeadCountMills rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</planetHeadCountMills>
+        <statusPlanet rdf:datatype="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#planetStatusDT">Intact</statusPlanet>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Yoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Yoda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jedi"/>
+        <forceUser rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</forceUser>
+        <statusCharacter>Dead</statusCharacter>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#AlienCharacter"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#DroidCharacter"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#HumanCharacter"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Character"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Faction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Planet"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Darkside"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Lightside"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Mixedside"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Hutts"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Jawa"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Rodians"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#Wookiees"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#MilitaryFaction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#PoliticalFaction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#ReligiousFaction"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusCharacter"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusFaction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daniel/ontologies/2023/2/mateiDanielProiect#statusPlanet"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
